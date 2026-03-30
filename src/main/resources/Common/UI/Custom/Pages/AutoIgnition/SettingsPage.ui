@@ -1,0 +1,308 @@
+@ToggleOnStyle = TextButtonStyle(
+    Default: (Background: #1a3d2e, LabelStyle: (FontSize: 14, TextColor: #4aff7f, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+    Hovered: (Background: #2a4d3e, LabelStyle: (FontSize: 14, TextColor: #6aff9f, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+    Pressed: (Background: #0a2d1e, LabelStyle: (FontSize: 14, TextColor: #4aff7f, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+
+@ThresholdButtonStyle = TextButtonStyle(
+    Default: (Background: #2b3542, LabelStyle: (FontSize: 16, TextColor: #96a9be, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+    Hovered: (Background: #3b4552, LabelStyle: (FontSize: 16, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+    Pressed: (Background: #1b2532, LabelStyle: (FontSize: 16, TextColor: #96a9be, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+
+@LabelStyle = (FontSize: 14, TextColor: #96a9be);
+@ValueStyle = (FontSize: 18, TextColor: #4a9eff, RenderBold: true);
+@DescriptionStyle = (FontSize: 12, TextColor: #96a9be);
+
+Group {
+    Anchor: (Width: 600, Height: 900);
+    Background: #0a1119(0.98);
+    LayoutMode: Top;
+    Padding: (Full: 24);
+
+    Label #SettingsTitle {
+        Text: "AutoIgnition Settings";
+        Anchor: (Height: 40);
+        Style: (FontSize: 24, TextColor: #ffffff, RenderBold: true);
+    }
+
+    Group {
+        Anchor: (Height: 1);
+        Background: #2b3542;
+    }
+
+    Group { Anchor: (Height: 20); }
+
+    Group #EnableOutputTransferSetting {
+        Anchor: (Height: 80);
+        Background: #141c26;
+        LayoutMode: Top;
+        Padding: (Full: 16);
+
+        Group {
+            LayoutMode: Left;
+            Anchor: (Height: 28);
+
+            Label #EnableOutputTransferLabel {
+                Text: "Enable Output Transfer";
+                FlexWeight: 1;
+                Style: @LabelStyle;
+            }
+
+            TextButton #ToggleEnableOutputTransfer {
+                Text: "ON";
+                Anchor: (Width: 80, Height: 28);
+                Style: @ToggleOnStyle;
+            }
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Label #EnableOutputTransferDesc {
+            Text: "Automatically moves finished products from benches to nearby chests";
+            Anchor: (Height: 20);
+            Style: @DescriptionStyle;
+        }
+    }
+
+    Group { Anchor: (Height: 16); }
+
+    Group #EnableInputTransferSetting {
+        Anchor: (Height: 80);
+        Background: #141c26;
+        LayoutMode: Top;
+        Padding: (Full: 16);
+
+        Group {
+            LayoutMode: Left;
+            Anchor: (Height: 28);
+
+            Label #EnableInputTransferLabel {
+                Text: "Enable Input Transfer";
+                FlexWeight: 1;
+                Style: @LabelStyle;
+            }
+
+            TextButton #ToggleEnableInputTransfer {
+                Text: "ON";
+                Anchor: (Width: 80, Height: 28);
+                Style: @ToggleOnStyle;
+            }
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Label #EnableInputTransferDesc {
+            Text: "Automatically pulls required ingredients from nearby containers";
+            Anchor: (Height: 20);
+            Style: @DescriptionStyle;
+        }
+    }
+
+    Group { Anchor: (Height: 16); }
+
+    Group #EnableAutoRefuelSetting {
+        Anchor: (Height: 80);
+        Background: #141c26;
+        LayoutMode: Top;
+        Padding: (Full: 16);
+
+        Group {
+            LayoutMode: Left;
+            Anchor: (Height: 28);
+
+            Label #EnableAutoRefuelLabel {
+                Text: "Enable Auto Refuel";
+                FlexWeight: 1;
+                Style: @LabelStyle;
+            }
+
+            TextButton #ToggleEnableAutoRefuel {
+                Text: "ON";
+                Anchor: (Width: 80, Height: 28);
+                Style: @ToggleOnStyle;
+            }
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Label #EnableAutoRefuelDesc {
+            Text: "Automatically pulls fuel from nearby containers into the bench";
+            Anchor: (Height: 20);
+            Style: @DescriptionStyle;
+        }
+    }
+
+    Group { Anchor: (Height: 16); }
+
+    Group #EnableAutoFuelStartSetting {
+        Anchor: (Height: 80);
+        Background: #141c26;
+        LayoutMode: Top;
+        Padding: (Full: 16);
+
+        Group {
+            LayoutMode: Left;
+            Anchor: (Height: 28);
+
+            Label #EnableAutoFuelStartLabel {
+                Text: "Enable Auto Fuel Start";
+                FlexWeight: 1;
+                Style: @LabelStyle;
+            }
+
+            TextButton #ToggleEnableAutoFuelStart {
+                Text: "ON";
+                Anchor: (Width: 80, Height: 28);
+                Style: @ToggleOnStyle;
+            }
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Label #EnableAutoFuelStartDesc {
+            Text: "Automatically ignites the bench when both fuel and input materials are present";
+            Anchor: (Height: 20);
+            Style: @DescriptionStyle;
+        }
+    }
+
+    Group { Anchor: (Height: 16); }
+
+    Group #EnableAutoFuelStopSetting {
+        Anchor: (Height: 80);
+        Background: #141c26;
+        LayoutMode: Top;
+        Padding: (Full: 16);
+
+        Group {
+            LayoutMode: Left;
+            Anchor: (Height: 28);
+
+            Label #EnableAutoFuelStopLabel {
+                Text: "Enable Auto Fuel Stop";
+                FlexWeight: 1;
+                Style: @LabelStyle;
+            }
+
+            TextButton #ToggleEnableAutoFuelStop {
+                Text: "ON";
+                Anchor: (Width: 80, Height: 28);
+                Style: @ToggleOnStyle;
+            }
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Label #EnableAutoFuelStopDesc {
+            Text: "Automatically extinguishes the bench when the recipe is finished to save fuel";
+            Anchor: (Height: 20);
+            Style: @DescriptionStyle;
+        }
+    }
+
+    Group { Anchor: (Height: 16); }
+
+    Group #UpdateIntervalSetting {
+        Anchor: (Height: 80);
+        Background: #141c26;
+        LayoutMode: Top;
+        Padding: (Full: 16);
+
+        Group {
+            LayoutMode: Left;
+            Anchor: (Height: 28);
+
+            Label {
+                Text: "Update Interval (ms)";
+                FlexWeight: 1;
+                Style: @LabelStyle;
+            }
+
+            TextButton #UpdateMinus {
+                Text: "-";
+                Anchor: (Width: 40, Height: 28);
+                Style: @ThresholdButtonStyle;
+            }
+
+            Label #UpdateValueLabel {
+                Text: "1000";
+                Anchor: (Width: 80, Height: 28);
+                Style: (FontSize: 16, TextColor: #4a9eff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center);
+            }
+
+            TextButton #UpdatePlus {
+                Text: "+";
+                Anchor: (Width: 40, Height: 28);
+                Style: @ThresholdButtonStyle;
+            }
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Label #UpdateIntervalDesc {
+            Text: "The delay between items transfer";
+            Anchor: (Height: 20);
+            Style: @DescriptionStyle;
+        }
+    }
+
+    Group { Anchor: (Height: 16); }
+
+    Group #ScannerIntervalSetting {
+        Anchor: (Height: 80);
+        Background: #141c26;
+        LayoutMode: Top;
+        Padding: (Full: 16);
+
+        Group {
+            LayoutMode: Left;
+            Anchor: (Height: 28);
+
+            Label {
+                Text: "Scanner Interval (ms)";
+                FlexWeight: 1;
+                Style: @LabelStyle;
+            }
+
+            TextButton #ScannerMinus {
+                Text: "-";
+                Anchor: (Width: 40, Height: 28);
+                Style: @ThresholdButtonStyle;
+            }
+
+            Label #ScannerValueLabel {
+                Text: "1000";
+                Anchor: (Width: 80, Height: 28);
+                Style: (FontSize: 16, TextColor: #4a9eff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center);
+            }
+
+            TextButton #ScannerPlus {
+                Text: "+";
+                Anchor: (Width: 40, Height: 28);
+                Style: @ThresholdButtonStyle;
+            }
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Label #ScannerIntervalDesc {
+            Text: "The delay between containers scan";
+            Anchor: (Height: 20);
+            Style: @DescriptionStyle;
+        }
+    }
+
+    Group { Anchor: (Height: 40); }
+
+    Label #BlacklistNotice {
+        Text: "Note: Blacklists (fuels, inputs and benches) must be modified directly in the config file.";
+        Anchor: (Height: 30);
+        Style: (
+            FontSize: 12,
+            TextColor: #6ab9ff,
+            HorizontalAlignment: Center,
+            VerticalAlignment: Center
+        );
+    }
+}
